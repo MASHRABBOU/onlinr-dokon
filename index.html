@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Do'kon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Online Do'kon</h1>
+        <button onclick="showCategory('cars')">Mashinalar</button>
+        <button onclick="showCategory('phones')">Smartfonlar</button>
+        <button onclick="showCategory('food')">Oziq Ovqatlar</button>
+        <button onclick="showCategory('naushnik')">Quloqchinlar</button>
+        <button id="cart-btn" onclick="openCart()">Savatcha</button>
+    </header>
+
+    <div id="product-container">
+        <!-- Mashinalar bolimi -->
+        <div class="product cars" onclick="addToCart('Audi', 45000)">
+            <img src="/img/oq.webp" alt="Audi">
+            <h3>Audi</h3>
+            <p>Rangi: Oq <br>
+                Tezligi: 240 km/h <br>
+                5 soniyada 100km/h ga chiqadi
+                </p>
+            <p>$45,000</p>
+        </div>
+        <div class="product cars" onclick="addToCart('Audi', 52000)">
+            <img src="/img/audi.jpg" alt="Audi">
+            <h3>Audi</h3>
+            <p>Rangi: Qora <br>
+            Tezligi: 240 km/h <br>
+            3,5 soniyada 100km/h ga chiqadi
+            </p>
+            <p>$52,000</p>
+        </div>
+        <div class="product cars" onclick="addToCart('Audi', 40000)">
+            <img src="/img/ko'k.jpg" alt="Audi">
+            <h3>Audi</h3>
+            <p>Rangi: Ko'k</p>
+            <p>Tezkigi:250 km/h <br>
+                4 soniyada 100km/h ga chiqadi
+            </p>
+
+            <p>$40,000</p>
+
+
+            
+        </div>
+        <div id="cart-btn-wrapper">
+            <button onclick="showCategory('Delet')">Chiqmoq</button>
+        </div>
+
+        <!-- Smartfonlar bolimi -->
+        <div class="product phones" onclick="addToCart('iPhone 11', 500)">
+            <img src="/tel/11.png" alt="iPhone 11" width="200">
+            <h3>iPhone 11</h3>
+            <p>Istalgan rangi yoki turidan bor</p>
+            <p>$500</p>
+        </div>
+        <div class="product phones" onclick="addToCart('iPhone 14', 1500)">
+            <img src="/tel/14.webp" alt="iPhone 14" width="200">
+            <h3>iPhone 14</h3>
+            <p>Istalgan rangi yoki turidan bor</p>
+            <p>$1500</p>
+        </div><div class="product phones" onclick="addToCart('iPhone 15', 2000)">
+            <img src="/tel/15.jpg" alt="iPhone 15" width="200" height="100">
+            <h3>iPhone 15</h3>
+            <p>Istalgan rangi yoki turidan bor</p>
+            <p>$2000</p>
+        </div>
+        <div id="cart-btn-wrapper">
+            <button onclick="showCategory('Delet')">Chiqmoq</button>
+        </div>
+
+        <!-- Oziq Ovqatlar bolimi -->
+        <div class="product food" onclick="addToCart('Un', 9)">
+            <img src="/oziq/un.jpg" alt="Pizza">
+            <h3>Un</h3>
+            <p>Istalgan turidan bor</p>
+            <p>$9</p>
+        </div>
+        <div class="product food" onclick="addToCart('Gosht', 5)">
+            <img src="/oziq/gosht.jpg" alt="Pizza">
+            <h3>Go'sht</h3>
+            <p>Istalgan turidan bor</p>
+            <p>$5</p>
+        </div>
+        <div class="product food" onclick="addToCart('Yog', 4)">
+            <img src="/oziq/yog.png" alt="Pizza">
+            <h3>Yog'</h3>
+            <p>Istalgan turidan bor</p>
+            <p>$4</p>
+        </div>
+        <div id="cart-btn-wrapper">
+            <button onclick="showCategory('Delet')">Chiqmoq</button>
+        </div>
+        <!-- Boshqa mahsulotlar -->
+        <div class="product naushnik" onclick="addToCart('AirPodsPro', 10)">
+            <img src="/quloq/air.jpg" alt="img">
+            <h3>AirPodsPro</h3>
+            <p>Orginal</p>
+            <p>$10</p>
+        </div>
+        <div class="product naushnik" onclick="addToCart('AirPodsPro', 15)">
+            <img src="/quloq/pods.jpeg" alt="img">
+            <h3>AirPodsPro</h3>
+            <p>Orginal</p>
+            <p>$10</p>
+        </div>
+        <div class="product naushnik" onclick="addToCart('AirPodsPro', 100)">
+            <img src="/quloq/pro.jpg" alt="img">
+            <h3>AirPodsPro</h3>
+            <p>Orginal</p>
+            <p>$100</p>
+        </div>
+        <div id="cart-btn-wrapper">
+            <button onclick="showCategory('Delet')">Chiqmoq</button>
+        </div>
+        
+    </div>
+
+    <div id="cart-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Savatcha</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-items">Jami mahsulotlar soni: <span id="item-count">0</span></p>
+            <p id="total-price">Jami summa: $<span id="cart-total">0</span></p>
+            <button onclick="checkout()">Tasdiqlash</button>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
